@@ -6,7 +6,9 @@
    card's data-roast value, then hides cards that do not match.
    ================================================================ */
 
-// Find all filter buttons, all coffee cards, and the visible-count text.
+// This script is loaded only by products.htm, where these elements exist.
+// querySelectorAll returns every matching element as a list.
+// querySelector returns the first matching element.
 const filterButtons = document.querySelectorAll(".filter-button");
 const coffeeCards = document.querySelectorAll(".full-product-grid .product-card");
 const productCount = document.querySelector("#product-count");

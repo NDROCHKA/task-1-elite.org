@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Standard metadata keeps text readable and the page responsive. -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Contact or visit the fictional Ember & Oak coffee roastery in Beirut.">
   <title>Contact | Ember &amp; Oak</title>
+  <!-- All pages load the same typeface for a consistent visual identity. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- ../ means go up one folder, then open css/style.css. -->
   <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
+  <!-- These two narrow bars provide quick store information. -->
   <div class="announcement-bar"><p>Free delivery on orders over $45</p></div>
   <div class="service-bar"><div class="container service-row"><p>Roasted fresh every week</p><p>Pickup available in Mar Mikhael</p></div></div>
 
+  <!-- SHARED HEADER: copied between pages because plain HTML has no components. -->
   <header class="site-header">
     <div class="container nav-shell">
+      <!-- The checkbox controls the mobile navigation using CSS. -->
       <input class="menu-toggle" type="checkbox" id="menu-toggle">
       <label class="menu-button" for="menu-toggle" aria-label="Open navigation menu"><span></span><span></span><span></span></label>
+
+      <!-- Main navigation connects all four pages. -->
       <nav class="main-nav" aria-label="Main navigation">
         <ul class="nav-list">
           <li><a href="../index.htm">Home</a></li>
@@ -27,12 +35,17 @@
           <li><a href="about.htm">Our story</a></li>
         </ul>
       </nav>
+      <!-- The logo is also a homepage link. -->
       <a class="brand" href="../index.htm" aria-label="Ember and Oak home"><strong>EMBER</strong><span>&amp;</span><strong>OAK</strong></a>
+
+      <!-- #visit jumps to the opening-hours section lower on this page. -->
       <div class="nav-actions"><a class="nav-contact active" aria-current="page" href="contact.htm">Contact</a><a class="header-cta" href="#visit">Visit us</a></div>
     </div>
   </header>
 
+  <!-- main groups the Contact page's heading, form, and visit information. -->
   <main>
+    <!-- A short page heading introduces the purpose of the form. -->
     <section class="page-heading">
       <div class="container narrow-heading">
         <p class="eyebrow">Contact us</p>
@@ -43,6 +56,7 @@
 
     <!-- The reference contact page uses a compact form beside a large image. -->
     <section class="contact-main">
+      <!-- This image and the form each take 50% width on desktop. -->
       <div class="contact-photo"><img src="../images/cafe.jpg" alt="A bright cafe table surrounded by plants"></div>
 
       <div class="contact-form-wrap">
@@ -51,6 +65,7 @@
 
         <!-- Required fields use built-in browser validation; no JavaScript is needed. -->
         <form class="contact-form" action="#">
+          <!-- Flexbox places first and last name on the same row. -->
           <div class="form-row">
             <div class="form-field"><label for="first-name">First name</label><input id="first-name" name="first-name" type="text" required></div>
             <div class="form-field"><label for="last-name">Last name</label><input id="last-name" name="last-name" type="text" required></div>
@@ -82,6 +97,7 @@
     </section>
   </main>
 
+  <!-- SHARED FOOTER: this matches the footer on the other three pages. -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand"><a class="brand footer-logo" href="../index.htm"><strong>EMBER</strong><span>&amp;</span><strong>OAK</strong></a><p>Small-batch coffee roasted in Beirut.</p></div>

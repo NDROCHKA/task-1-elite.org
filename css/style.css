@@ -1090,6 +1090,7 @@ p {
    Each breakpoint changes layouts gradually instead of creating a
    completely separate mobile website.
    ---------------------------------------------------------------- */
+/* LAPTOP: reduce navigation spacing and change products to two columns. */
 @media (max-width: 1180px) {
   .nav-list {
     gap: 16px;
@@ -1113,6 +1114,7 @@ p {
   }
 }
 
+/* TABLET: enable the hamburger menu and stack large split sections. */
 @media (max-width: 920px) {
   .container {
     width: min(calc(100% - 40px), var(--container));
@@ -1277,6 +1279,7 @@ p {
   }
 }
 
+/* PHONE: most grids become one column for comfortable reading. */
 @media (max-width: 680px) {
   .container {
     width: min(calc(100% - 28px), var(--container));
@@ -1444,6 +1447,7 @@ p {
   }
 }
 
+/* SMALL PHONE: tighten the logo and let filter buttons use two rows. */
 @media (max-width: 430px) {
   .brand {
     gap: 3px;
