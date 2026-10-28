@@ -29,7 +29,7 @@
           <li><a href="contact.htm">Contact</a></li>
         </ul>
       </nav>
-      <div class="nav-actions"><a class="visit-link" href="contact.htm">Visit the roastery</a><a class="cart-link" href="products.htm">Bag <span>0</span></a></div>
+      <div class="nav-actions"><a class="visit-link" href="contact.htm#visit">Visit the roastery</a><a class="cart-link" href="products.htm">Bag <span>0</span></a></div>
     </div>
   </header>
 
@@ -45,50 +45,53 @@
 
     <section class="section-space">
       <div class="container">
-        <!-- These filter buttons are visual in this HTML/CSS version. -->
+        <!-- JavaScript reads each button's data-filter value. -->
         <div class="product-toolbar">
-          <p><strong>6 coffees</strong> in the current collection</p>
+          <p><strong id="product-count">6 coffees</strong> in the current collection</p>
           <div class="filter-list" aria-label="Coffee filters">
-            <button class="filter-button active" type="button">All</button>
-            <button class="filter-button" type="button">Light</button>
-            <button class="filter-button" type="button">Medium</button>
-            <button class="filter-button" type="button">Dark</button>
+            <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter-button" type="button" data-filter="light" aria-pressed="false">Light</button>
+            <button class="filter-button" type="button" data-filter="medium" aria-pressed="false">Medium</button>
+            <button class="filter-button" type="button" data-filter="dark" aria-pressed="false">Dark</button>
           </div>
         </div>
 
-        <!-- flex-wrap lets cards move onto a new line when space runs out. -->
+        <!--
+          flex-wrap lets cards move onto a new line when space runs out.
+          data-roast tells JavaScript which filter each card belongs to.
+        -->
         <div class="product-grid full-product-grid">
-          <article class="product-card">
+          <article class="product-card" data-roast="medium">
             <div class="product-image-link"><img src="../images/coffee-1.jpg" alt="Latte surrounded by roasted coffee beans"><span class="product-label">Bestseller</span></div>
             <div class="product-info"><div><p class="product-origin">Brazil · Medium roast</p><h2>Golden Hour</h2></div><p class="product-price">$16</p></div>
             <p class="taste-notes">Cocoa · Almond · Brown sugar</p>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-roast="light">
             <div class="product-image-link"><img src="../images/coffee-2.jpg" alt="Coffee cups among green plants"><span class="product-label">New</span></div>
             <div class="product-info"><div><p class="product-origin">Ethiopia · Light roast</p><h2>Cloud Forest</h2></div><p class="product-price">$19</p></div>
             <p class="taste-notes">Peach · Jasmine · Honey</p>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-roast="medium">
             <div class="product-image-link"><img src="../images/coffee-3.jpg" alt="Several styles of coffee arranged on a round table"></div>
             <div class="product-info"><div><p class="product-origin">Guatemala · Medium roast</p><h2>Common Ground</h2></div><p class="product-price">$17</p></div>
             <p class="taste-notes">Apple · Praline · Toffee</p>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-roast="dark">
             <div class="product-image-link"><img src="../images/coffee-4.jpg" alt="Warm coffee shop interior"></div>
             <div class="product-info"><div><p class="product-origin">Indonesia · Dark roast</p><h2>Night Shift</h2></div><p class="product-price">$18</p></div>
             <p class="taste-notes">Dark chocolate · Cedar · Spice</p>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-roast="medium">
             <div class="product-image-link"><img src="../images/coffee-5.jpg" alt="Latte on a wooden table"></div>
             <div class="product-info"><div><p class="product-origin">Colombia · Medium roast</p><h2>After Rain</h2></div><p class="product-price">$18</p></div>
             <p class="taste-notes">Cherry · Caramel · Orange</p>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-roast="dark">
             <div class="product-image-link"><img src="../images/coffee-6.jpg" alt="Roasted coffee beans on a dark surface"><span class="product-label">House blend</span></div>
             <div class="product-info"><div><p class="product-origin">Seasonal blend · Medium-dark</p><h2>Ember House</h2></div><p class="product-price">$15</p></div>
             <p class="taste-notes">Hazelnut · Molasses · Cacao</p>
@@ -118,5 +121,8 @@
     </div>
     <div class="container footer-bottom"><p>© 2026 Ember &amp; Oak. Student project.</p><p>Inspired by modern editorial storefronts.</p></div>
   </footer>
+
+  <!-- The script is placed last so the HTML above loads before JavaScript runs. -->
+  <script src="../js/script.js"></script>
 </body>
 </html>

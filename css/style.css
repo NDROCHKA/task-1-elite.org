@@ -485,6 +485,11 @@ h3 {
   min-width: 260px;
 }
 
+/* JavaScript adds the hidden attribute to coffees outside the chosen filter. */
+.product-card[hidden] {
+  display: none;
+}
+
 .product-image-link {
   position: relative;
   aspect-ratio: 4 / 5;
