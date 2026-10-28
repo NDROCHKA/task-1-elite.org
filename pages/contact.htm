@@ -3,87 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact or visit the fictional Ember & Oak coffee roastery.">
+  <meta name="description" content="Contact or visit the fictional Ember & Oak coffee roastery in Beirut.">
   <title>Contact | Ember &amp; Oak</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-  <!-- ../ goes up from the pages folder, then css/ enters the CSS folder. -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-  <div class="announcement-bar"><p>Free local delivery on orders over $45 <span aria-hidden="true">•</span> Roasted every week</p></div>
+  <div class="announcement-bar"><p>Free delivery on orders over $45</p></div>
+  <div class="service-bar"><div class="container service-row"><p>Roasted fresh every week</p><p>Pickup available in Mar Mikhael</p></div></div>
 
   <header class="site-header">
     <div class="container nav-shell">
       <input class="menu-toggle" type="checkbox" id="menu-toggle">
       <label class="menu-button" for="menu-toggle" aria-label="Open navigation menu"><span></span><span></span><span></span></label>
-      <a class="brand" href="../index.htm">EMBER <span>&amp;</span> OAK</a>
       <nav class="main-nav" aria-label="Main navigation">
         <ul class="nav-list">
           <li><a href="../index.htm">Home</a></li>
-          <li><a href="products.htm">Coffee</a></li>
-          <li><a href="about.htm">Our Story</a></li>
-          <li><a class="active" href="contact.htm">Contact</a></li>
+          <li><a href="products.htm">Shop coffee</a></li>
+          <li><a href="products.htm#bundles">Bundles</a></li>
+          <li><a href="about.htm">Our story</a></li>
         </ul>
       </nav>
-      <div class="nav-actions"><a class="visit-link" href="#visit">Visit the roastery</a><a class="cart-link" href="products.htm">Bag <span>0</span></a></div>
+      <a class="brand" href="../index.htm" aria-label="Ember and Oak home"><strong>EMBER</strong><span>&amp;</span><strong>OAK</strong></a>
+      <div class="nav-actions"><a class="nav-contact active" aria-current="page" href="contact.htm">Contact</a><a class="header-cta" href="#visit">Visit us</a></div>
     </div>
   </header>
 
   <main>
-    <!-- Contact-page title: intentionally shorter than the homepage hero. -->
-    <section class="contact-intro">
-      <div class="container">
-        <p class="eyebrow">Contact &amp; visit</p>
-        <h1>Questions, coffee talk, or just saying hello.</h1>
+    <section class="page-heading">
+      <div class="container narrow-heading">
+        <p class="eyebrow">Contact us</p>
+        <h1>Let&apos;s talk coffee.</h1>
+        <p>Ask about a roast, plan a visit, or send a simple hello.</p>
       </div>
     </section>
 
-    <!-- CONTACT LAYOUT: two Flexbox children create the information/form split. -->
-    <!-- The id lets any "Visit the roastery" link jump directly here. -->
-    <section class="contact-section" id="visit">
-      <div class="container contact-layout">
-        <div class="contact-details">
-          <p class="eyebrow">The roastery</p>
-          <h2>Find your favourite table.</h2>
-          <p class="contact-lead">Come for a quick espresso, pick up a bag, or ask us anything about brewing better coffee at home.</p>
+    <!-- The reference contact page uses a compact form beside a large image. -->
+    <section class="contact-main">
+      <div class="contact-photo"><img src="../images/cafe.jpg" alt="A bright cafe table surrounded by plants"></div>
 
-          <div class="contact-group">
-            <h3>Address</h3>
-            <p>18 River Street<br>Mar Mikhael, Beirut</p>
-          </div>
-          <div class="contact-group">
-            <h3>Opening hours</h3>
-            <p>Monday–Saturday: 8:00 AM–7:00 PM<br>Sunday: 9:00 AM–3:00 PM</p>
-          </div>
-          <div class="contact-group">
-            <h3>Contact</h3>
-            <p>hello@emberandoak.test<br>+961 01 555 014</p>
-          </div>
-        </div>
+      <div class="contact-form-wrap">
+        <p class="eyebrow">Send a message</p>
+        <h2>How can we help?</h2>
 
-        <!-- Labels are important: they explain every form field to all visitors. -->
+        <!-- Required fields use built-in browser validation; no JavaScript is needed. -->
         <form class="contact-form" action="#">
           <div class="form-row">
-            <div class="form-field">
-              <label for="first-name">First name</label>
-              <input id="first-name" name="first-name" type="text" placeholder="Your first name">
-            </div>
-            <div class="form-field">
-              <label for="last-name">Last name</label>
-              <input id="last-name" name="last-name" type="text" placeholder="Your last name">
-            </div>
+            <div class="form-field"><label for="first-name">First name</label><input id="first-name" name="first-name" type="text" required></div>
+            <div class="form-field"><label for="last-name">Last name</label><input id="last-name" name="last-name" type="text" required></div>
           </div>
-
+          <div class="form-field"><label for="email">Email address</label><input id="email" name="email" type="email" required></div>
           <div class="form-field">
-            <label for="email">Email address</label>
-            <input id="email" name="email" type="email" placeholder="you@example.com">
-          </div>
-
-          <div class="form-field">
-            <label for="subject">What is this about?</label>
+            <label for="subject">Subject</label>
             <select id="subject" name="subject">
               <option value="coffee">Choosing a coffee</option>
               <option value="visit">Visiting the roastery</option>
@@ -91,37 +65,31 @@
               <option value="other">Something else</option>
             </select>
           </div>
-
-          <div class="form-field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="6" placeholder="Tell us how we can help"></textarea>
-          </div>
-
-          <!-- Without a backend this button demonstrates design but cannot send email. -->
-          <button class="button button-dark" type="submit">Send message</button>
-          <p class="form-note">Demo form for this HTML/CSS project — no information is sent.</p>
+          <div class="form-field"><label for="message">Message</label><textarea id="message" name="message" rows="5" required></textarea></div>
+          <button class="button button-dark" type="submit">Submit</button>
+          <p class="form-note">Demo form only &mdash; this project has no backend, so no information is sent.</p>
         </form>
       </div>
     </section>
 
-    <!-- A wide image gives the bottom of the page the same visual weight as the top. -->
-    <section class="contact-image">
-      <img src="../images/cafe.jpg" alt="Coffee table inside a bright café filled with plants">
-      <div class="contact-image-note">
-        <span>18 River Street</span>
-        <strong>See you at the roastery.</strong>
+    <!-- The Visit us navigation link jumps directly to this id. -->
+    <section class="visit-information" id="visit">
+      <div class="container visit-info-grid">
+        <div><p class="eyebrow light">Visit the roastery</p><h2>18 River Street<br>Mar Mikhael, Beirut</h2></div>
+        <div><h3>Opening hours</h3><p>Monday&ndash;Saturday<br>8:00 AM&ndash;7:00 PM</p><p>Sunday<br>9:00 AM&ndash;3:00 PM</p></div>
+        <div><h3>Contact</h3><p>hello@emberandoak.test<br>+961 01 555 014</p><p>Pickup is available during all opening hours.</p></div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-top">
-      <div class="footer-brand"><a class="brand" href="../index.htm">EMBER <span>&amp;</span> OAK</a><p>Small batches, warm tables, and coffee with a clear point of view.</p></div>
-      <div class="footer-column"><h2>Explore</h2><a href="products.htm">Coffee</a><a href="about.htm">Our story</a><a href="contact.htm">Visit us</a></div>
-      <div class="footer-column"><h2>Find us</h2><p>Mar Mikhael, Beirut</p><p>hello@emberandoak.test</p><p>+961 01 555 014</p></div>
-      <div class="footer-column newsletter"><h2>Notes from the roastery</h2><p>New coffees and brewing ideas, occasionally.</p><form class="newsletter-form" action="#"><label class="visually-hidden" for="contact-email">Email address</label><input id="contact-email" type="email" placeholder="Email address"><button type="submit" aria-label="Join newsletter">→</button></form></div>
+    <div class="container footer-grid">
+      <div class="footer-brand"><a class="brand footer-logo" href="../index.htm"><strong>EMBER</strong><span>&amp;</span><strong>OAK</strong></a><p>Small-batch coffee roasted in Beirut.</p></div>
+      <div class="footer-column"><h2>Shop</h2><a href="products.htm">All coffee</a><a href="products.htm#bundles">Coffee bundles</a><a href="products.htm">New arrivals</a></div>
+      <div class="footer-column"><h2>Help</h2><a href="about.htm">Our story</a><a href="contact.htm">Contact us</a><a href="#visit">Visit the roastery</a></div>
+      <div class="footer-column"><h2>Find us</h2><p>18 River Street<br>Mar Mikhael, Beirut</p><p>Mon&ndash;Sat, 8 AM&ndash;7 PM</p></div>
     </div>
-    <div class="container footer-bottom"><p>© 2026 Ember &amp; Oak. Student project.</p><p>Inspired by modern editorial storefronts.</p></div>
+    <div class="container footer-bottom"><p>&copy; 2026 Ember &amp; Oak. Student project.</p><p>HTML &middot; CSS &middot; Simple JavaScript</p></div>
   </footer>
 </body>
 </html>

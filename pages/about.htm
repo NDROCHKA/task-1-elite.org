@@ -3,118 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Read the fictional story behind Ember & Oak small-batch coffee.">
+  <meta name="description" content="Learn the fictional story behind Ember & Oak coffee roasters.">
   <title>Our Story | Ember &amp; Oak</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-  <!-- ../ goes up from the pages folder, then css/ enters the CSS folder. -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-  <div class="announcement-bar"><p>Free local delivery on orders over $45 <span aria-hidden="true">•</span> Roasted every week</p></div>
+  <div class="announcement-bar"><p>Free delivery on orders over $45</p></div>
+  <div class="service-bar"><div class="container service-row"><p>Roasted fresh every week</p><p>Pickup available in Mar Mikhael</p></div></div>
 
   <header class="site-header">
     <div class="container nav-shell">
-      <!-- CSS reads the state of this checkbox to show or hide the mobile menu. -->
       <input class="menu-toggle" type="checkbox" id="menu-toggle">
       <label class="menu-button" for="menu-toggle" aria-label="Open navigation menu"><span></span><span></span><span></span></label>
-      <a class="brand" href="../index.htm">EMBER <span>&amp;</span> OAK</a>
       <nav class="main-nav" aria-label="Main navigation">
         <ul class="nav-list">
           <li><a href="../index.htm">Home</a></li>
-          <li><a href="products.htm">Coffee</a></li>
-          <li><a class="active" href="about.htm">Our Story</a></li>
-          <li><a href="contact.htm">Contact</a></li>
+          <li><a href="products.htm">Shop coffee</a></li>
+          <li><a href="products.htm#bundles">Bundles</a></li>
+          <li><a class="active" aria-current="page" href="about.htm">Our story</a></li>
         </ul>
       </nav>
-      <div class="nav-actions"><a class="visit-link" href="contact.htm#visit">Visit the roastery</a><a class="cart-link" href="products.htm">Bag <span>0</span></a></div>
+      <a class="brand" href="../index.htm" aria-label="Ember and Oak home"><strong>EMBER</strong><span>&amp;</span><strong>OAK</strong></a>
+      <div class="nav-actions"><a class="nav-contact" href="contact.htm">Contact</a><a class="header-cta" href="contact.htm#visit">Visit us</a></div>
     </div>
   </header>
 
   <main>
-    <!-- INNER HERO: text and image become two equal Flexbox columns. -->
-    <section class="inner-hero">
-      <div class="inner-hero-copy">
-        <p class="eyebrow">Our story</p>
-        <h1>A small roastery with a wide-open door.</h1>
-        <p>Ember &amp; Oak began as a fictional idea for a student project: make specialty coffee feel clear, warm, and easy to enjoy.</p>
-      </div>
-      <div class="inner-hero-image">
-        <img src="../images/story.jpg" alt="Friends bringing different coffee drinks together">
+    <section class="page-heading">
+      <div class="container narrow-heading">
+        <p class="eyebrow">About us</p>
+        <h1>Built around coffee.<br>Made for people.</h1>
+        <p>A fictional neighbourhood roastery created to demonstrate a complete multi-page HTML and CSS website.</p>
       </div>
     </section>
 
-    <!-- Small facts use Flexbox instead of a table because they are visual statistics. -->
-    <section class="stats-section">
-      <div class="container stats-list">
-        <div class="stat"><strong>06</strong><span>Seasonal coffees</span></div>
-        <div class="stat"><strong>48h</strong><span>From roast to pack</span></div>
-        <div class="stat"><strong>01</strong><span>Neighbourhood roastery</span></div>
-        <div class="stat"><strong>∞</strong><span>Reasons to share a cup</span></div>
-      </div>
+    <!-- One large editorial image gives the page the same store-like visual rhythm. -->
+    <section class="about-hero-image">
+      <img src="../images/story.jpg" alt="Friends sharing coffee around a table">
     </section>
 
-    <!-- EDITORIAL STORY: a narrow text column improves readability. -->
-    <section class="section-space">
-      <div class="container editorial-story">
-        <p class="eyebrow">What we believe</p>
-        <h2>Specialty coffee does not need to feel complicated.</h2>
-        <div class="story-columns">
-          <p>It can be as simple as knowing where a bean came from, when it was roasted, and what you might taste in the cup. We use plain language because good coffee should invite people in.</p>
-          <p>Our fictional roast list is intentionally short. Light coffees stay bright, darker coffees keep their sweetness, and every bag includes a straightforward brewing suggestion.</p>
+    <!-- This two-column layout is created with Flexbox. -->
+    <section class="section">
+      <div class="container about-story-grid">
+        <div>
+          <p class="eyebrow">Our approach</p>
+          <h2>Specialty coffee without the complicated language.</h2>
+        </div>
+        <div class="about-paragraphs">
+          <p>Ember &amp; Oak began as an idea for this student project: a focused coffee brand with a warm identity, a clear product collection, and a welcoming physical space.</p>
+          <p>Every fictional coffee has an origin, roast level, and short flavour description. The goal is to make choosing a bag feel simple even if someone is completely new to coffee.</p>
+          <p>Our visual direction follows the structure of a modern retail website while changing the brand, subject, imagery, and writing into something original.</p>
         </div>
       </div>
     </section>
 
-    <!-- PROCESS: each article is one step and Flexbox arranges all three in a row. -->
-    <section class="process-section section-space">
+    <!-- Repeated cards make the brand values easy to scan. -->
+    <section class="values-section">
       <div class="container">
-        <div class="section-heading">
-          <div><p class="eyebrow">From source to cup</p><h2>Three careful steps.</h2></div>
-        </div>
-
-        <div class="process-list">
-          <article class="process-card">
-            <span>01</span>
-            <h3>Choose with purpose</h3>
-            <p>We imagine working with transparent importers and producers who care about quality and long-term relationships.</p>
-          </article>
-          <article class="process-card">
-            <span>02</span>
-            <h3>Roast with restraint</h3>
-            <p>Each roast is designed to reveal the coffee’s natural sweetness instead of covering it with unnecessary bitterness.</p>
-          </article>
-          <article class="process-card">
-            <span>03</span>
-            <h3>Share while fresh</h3>
-            <p>Coffee is packed quickly, labelled clearly, and served with practical guidance for brewing it at home.</p>
-          </article>
+        <div class="section-title centered-title"><p class="eyebrow">What matters</p><h2>Three simple principles.</h2></div>
+        <div class="value-grid">
+          <article><span>01</span><h3>Choose carefully</h3><p>Start with coffees that have clear origins, thoughtful processing, and plenty of natural character.</p></article>
+          <article><span>02</span><h3>Roast clearly</h3><p>Use roast levels people understand and describe flavour without making the experience intimidating.</p></article>
+          <article><span>03</span><h3>Share generously</h3><p>Create a room, a product, and a website that make people feel welcome from the beginning.</p></article>
         </div>
       </div>
     </section>
 
-    <!-- A final split section connects the story back to the physical café. -->
-    <section class="story-section reverse-story">
-      <div class="story-image-wrap"><img src="../images/cafe.jpg" alt="A café table near a bright window"></div>
-      <div class="story-copy">
+    <section class="visit-split">
+      <div class="visit-image"><img src="../images/cafe.jpg" alt="A quiet cafe table beside the window"></div>
+      <div class="visit-copy">
         <p class="eyebrow">The room matters too</p>
-        <h2>Designed for conversations that take their time.</h2>
-        <p>The roastery combines warm timber, natural light, and an open coffee bar. There is no rush: stay for one espresso or spend the afternoon with a book.</p>
-        <a class="button button-dark" href="contact.htm">Visit Ember &amp; Oak</a>
+        <h2>A place designed for unhurried coffee.</h2>
+        <p>Warm timber, natural light, and a small menu keep the focus on good cups and good conversations.</p>
+        <a class="button button-dark" href="contact.htm#visit">Visit Ember &amp; Oak</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-top">
-      <div class="footer-brand"><a class="brand" href="../index.htm">EMBER <span>&amp;</span> OAK</a><p>Small batches, warm tables, and coffee with a clear point of view.</p></div>
-      <div class="footer-column"><h2>Explore</h2><a href="products.htm">Coffee</a><a href="about.htm">Our story</a><a href="contact.htm">Visit us</a></div>
-      <div class="footer-column"><h2>Find us</h2><p>Mar Mikhael, Beirut</p><p>hello@emberandoak.test</p><p>+961 01 555 014</p></div>
-      <div class="footer-column newsletter"><h2>Notes from the roastery</h2><p>New coffees and brewing ideas, occasionally.</p><form class="newsletter-form" action="#"><label class="visually-hidden" for="about-email">Email address</label><input id="about-email" type="email" placeholder="Email address"><button type="submit" aria-label="Join newsletter">→</button></form></div>
+    <div class="container footer-grid">
+      <div class="footer-brand"><a class="brand footer-logo" href="../index.htm"><strong>EMBER</strong><span>&amp;</span><strong>OAK</strong></a><p>Small-batch coffee roasted in Beirut.</p></div>
+      <div class="footer-column"><h2>Shop</h2><a href="products.htm">All coffee</a><a href="products.htm#bundles">Coffee bundles</a><a href="products.htm">New arrivals</a></div>
+      <div class="footer-column"><h2>Help</h2><a href="about.htm">Our story</a><a href="contact.htm">Contact us</a><a href="contact.htm#visit">Visit the roastery</a></div>
+      <div class="footer-column"><h2>Find us</h2><p>18 River Street<br>Mar Mikhael, Beirut</p><p>Mon&ndash;Sat, 8 AM&ndash;7 PM</p></div>
     </div>
-    <div class="container footer-bottom"><p>© 2026 Ember &amp; Oak. Student project.</p><p>Inspired by modern editorial storefronts.</p></div>
+    <div class="container footer-bottom"><p>&copy; 2026 Ember &amp; Oak. Student project.</p><p>HTML &middot; CSS &middot; Simple JavaScript</p></div>
   </footer>
 </body>
 </html>

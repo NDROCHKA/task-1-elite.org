@@ -3,52 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore the fictional Ember & Oak coffee collection.">
-  <title>Our Coffee | Ember &amp; Oak</title>
+  <meta name="description" content="Explore Ember & Oak coffee bundles and freshly roasted coffees.">
+  <title>Shop Coffee | Ember &amp; Oak</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-  <!-- ../ goes up from the pages folder, then css/ enters the CSS folder. -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- ../ goes up from pages before entering the css folder. -->
   <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-  <div class="announcement-bar"><p>Free local delivery on orders over $45 <span aria-hidden="true">•</span> Roasted every week</p></div>
+  <div class="announcement-bar"><p>Free delivery on orders over $45</p></div>
+  <div class="service-bar"><div class="container service-row"><p>Roasted fresh every week</p><p>Pickup available in Mar Mikhael</p></div></div>
 
-  <!-- The header is repeated because plain HTML has no component system. -->
   <header class="site-header">
     <div class="container nav-shell">
       <input class="menu-toggle" type="checkbox" id="menu-toggle">
       <label class="menu-button" for="menu-toggle" aria-label="Open navigation menu"><span></span><span></span><span></span></label>
-      <a class="brand" href="../index.htm">EMBER <span>&amp;</span> OAK</a>
       <nav class="main-nav" aria-label="Main navigation">
         <ul class="nav-list">
           <li><a href="../index.htm">Home</a></li>
-          <li><a class="active" href="products.htm">Coffee</a></li>
-          <li><a href="about.htm">Our Story</a></li>
-          <li><a href="contact.htm">Contact</a></li>
+          <li><a class="active" aria-current="page" href="products.htm">Shop coffee</a></li>
+          <li><a href="#bundles">Bundles</a></li>
+          <li><a href="about.htm">Our story</a></li>
         </ul>
       </nav>
-      <div class="nav-actions"><a class="visit-link" href="contact.htm#visit">Visit the roastery</a><a class="cart-link" href="products.htm">Bag <span>0</span></a></div>
+      <a class="brand" href="../index.htm" aria-label="Ember and Oak home"><strong>EMBER</strong><span>&amp;</span><strong>OAK</strong></a>
+      <div class="nav-actions"><a class="nav-contact" href="contact.htm">Contact</a><a class="header-cta" href="contact.htm#visit">Visit us</a></div>
     </div>
   </header>
 
   <main>
-    <!-- A compact page introduction replaces the large homepage hero. -->
-    <section class="page-hero coffee-page-hero">
-      <div class="container page-hero-content">
-        <p class="eyebrow light">Roast list · Season 04</p>
-        <h1>Coffee for every kind of morning.</h1>
-        <p>Six distinct coffees, roasted in small batches and ready for espresso, filter, or however you like to begin.</p>
+    <!-- A short collection heading matches the simple reference collection pages. -->
+    <section class="page-heading">
+      <div class="container narrow-heading">
+        <p class="eyebrow">The roast list</p>
+        <h1>Shop coffee</h1>
+        <p>Six coffees and two easy bundles, roasted in small batches for espresso, filter, or slow mornings.</p>
       </div>
     </section>
 
-    <section class="section-space">
+    <!-- Bundles come first because the supplied reference included a bundles page. -->
+    <section class="section bundles-section" id="bundles">
       <div class="container">
-        <!-- JavaScript reads each button's data-filter value. -->
+        <div class="section-title title-with-link">
+          <div><p class="eyebrow">Coffee bundles</p><h2>Better together.</h2></div>
+          <p class="section-note">Two simple sets for sharing or discovering something new.</p>
+        </div>
+
+        <div class="bundle-grid">
+          <article class="bundle-card">
+            <div class="bundle-image"><img src="../images/coffee-3.jpg" alt="Several coffee drinks arranged together"><span>Save $5</span></div>
+            <div class="bundle-copy"><div><p>Bundle 01</p><h3>The Morning Pair</h3><span>Golden Hour + Cloud Forest</span></div><strong>$30</strong></div>
+          </article>
+          <article class="bundle-card">
+            <div class="bundle-image"><img src="../images/coffee-5.jpg" alt="Coffee served on a wooden table"><span>House choice</span></div>
+            <div class="bundle-copy"><div><p>Bundle 02</p><h3>The Roaster's Three</h3><span>Light + medium + dark roast</span></div><strong>$45</strong></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section collection-section">
+      <div class="container">
+        <!-- The buttons use the small JavaScript file to filter by roast level. -->
         <div class="product-toolbar">
-          <p><strong id="product-count">6 coffees</strong> in the current collection</p>
-          <div class="filter-list" aria-label="Coffee filters">
+          <div><p class="eyebrow">All coffee</p><h2><span id="product-count">6 coffees</span></h2></div>
+          <div class="filter-list" aria-label="Filter coffee by roast">
             <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All</button>
             <button class="filter-button" type="button" data-filter="light" aria-pressed="false">Light</button>
             <button class="filter-button" type="button" data-filter="medium" aria-pressed="false">Medium</button>
@@ -56,73 +77,66 @@
           </div>
         </div>
 
-        <!--
-          flex-wrap lets cards move onto a new line when space runs out.
-          data-roast tells JavaScript which filter each card belongs to.
-        -->
+        <!-- data-roast is the value compared by JavaScript. -->
         <div class="product-grid full-product-grid">
           <article class="product-card" data-roast="medium">
-            <div class="product-image-link"><img src="../images/coffee-1.jpg" alt="Latte surrounded by roasted coffee beans"><span class="product-label">Bestseller</span></div>
-            <div class="product-info"><div><p class="product-origin">Brazil · Medium roast</p><h2>Golden Hour</h2></div><p class="product-price">$16</p></div>
-            <p class="taste-notes">Cocoa · Almond · Brown sugar</p>
+            <div class="product-image"><img src="../images/coffee-1.jpg" alt="Golden Hour coffee"><span class="product-badge">Bestseller</span></div>
+            <div class="product-details"><div><p>Brazil &middot; Medium</p><h3>Golden Hour</h3></div><strong>$16</strong></div>
+            <p class="taste-notes">Cocoa &middot; Almond &middot; Brown sugar</p>
           </article>
 
           <article class="product-card" data-roast="light">
-            <div class="product-image-link"><img src="../images/coffee-2.jpg" alt="Coffee cups among green plants"><span class="product-label">New</span></div>
-            <div class="product-info"><div><p class="product-origin">Ethiopia · Light roast</p><h2>Cloud Forest</h2></div><p class="product-price">$19</p></div>
-            <p class="taste-notes">Peach · Jasmine · Honey</p>
+            <div class="product-image"><img src="../images/coffee-2.jpg" alt="Cloud Forest coffee"><span class="product-badge">New</span></div>
+            <div class="product-details"><div><p>Ethiopia &middot; Light</p><h3>Cloud Forest</h3></div><strong>$19</strong></div>
+            <p class="taste-notes">Peach &middot; Jasmine &middot; Honey</p>
           </article>
 
           <article class="product-card" data-roast="medium">
-            <div class="product-image-link"><img src="../images/coffee-3.jpg" alt="Several styles of coffee arranged on a round table"></div>
-            <div class="product-info"><div><p class="product-origin">Guatemala · Medium roast</p><h2>Common Ground</h2></div><p class="product-price">$17</p></div>
-            <p class="taste-notes">Apple · Praline · Toffee</p>
+            <div class="product-image"><img src="../images/coffee-3.jpg" alt="Common Ground coffee"></div>
+            <div class="product-details"><div><p>Guatemala &middot; Medium</p><h3>Common Ground</h3></div><strong>$17</strong></div>
+            <p class="taste-notes">Apple &middot; Praline &middot; Toffee</p>
           </article>
 
           <article class="product-card" data-roast="dark">
-            <div class="product-image-link"><img src="../images/coffee-4.jpg" alt="Warm coffee shop interior"></div>
-            <div class="product-info"><div><p class="product-origin">Indonesia · Dark roast</p><h2>Night Shift</h2></div><p class="product-price">$18</p></div>
-            <p class="taste-notes">Dark chocolate · Cedar · Spice</p>
+            <div class="product-image"><img src="../images/coffee-4.jpg" alt="Night Shift coffee"></div>
+            <div class="product-details"><div><p>Indonesia &middot; Dark</p><h3>Night Shift</h3></div><strong>$18</strong></div>
+            <p class="taste-notes">Dark chocolate &middot; Cedar &middot; Spice</p>
           </article>
 
           <article class="product-card" data-roast="medium">
-            <div class="product-image-link"><img src="../images/coffee-5.jpg" alt="Latte on a wooden table"></div>
-            <div class="product-info"><div><p class="product-origin">Colombia · Medium roast</p><h2>After Rain</h2></div><p class="product-price">$18</p></div>
-            <p class="taste-notes">Cherry · Caramel · Orange</p>
+            <div class="product-image"><img src="../images/coffee-5.jpg" alt="After Rain coffee"></div>
+            <div class="product-details"><div><p>Colombia &middot; Medium</p><h3>After Rain</h3></div><strong>$18</strong></div>
+            <p class="taste-notes">Cherry &middot; Caramel &middot; Orange</p>
           </article>
 
           <article class="product-card" data-roast="dark">
-            <div class="product-image-link"><img src="../images/coffee-6.jpg" alt="Roasted coffee beans on a dark surface"><span class="product-label">House blend</span></div>
-            <div class="product-info"><div><p class="product-origin">Seasonal blend · Medium-dark</p><h2>Ember House</h2></div><p class="product-price">$15</p></div>
-            <p class="taste-notes">Hazelnut · Molasses · Cacao</p>
+            <div class="product-image"><img src="../images/coffee-6.jpg" alt="Ember House coffee"><span class="product-badge">House blend</span></div>
+            <div class="product-details"><div><p>Seasonal blend &middot; Dark</p><h3>Ember House</h3></div><strong>$15</strong></div>
+            <p class="taste-notes">Hazelnut &middot; Molasses &middot; Cacao</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- This callout breaks up the product page and provides a useful next step. -->
-    <section class="brew-callout">
-      <div class="container brew-callout-inner">
-        <div>
-          <p class="eyebrow light">Not sure where to begin?</p>
-          <h2>Tell us how you brew. We’ll help with the rest.</h2>
-        </div>
+    <section class="shop-help">
+      <div class="container shop-help-row">
+        <div><p class="eyebrow light">Need a recommendation?</p><h2>Tell us how you brew.</h2></div>
         <a class="button button-light" href="contact.htm">Ask the roastery</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-top">
-      <div class="footer-brand"><a class="brand" href="../index.htm">EMBER <span>&amp;</span> OAK</a><p>Small batches, warm tables, and coffee with a clear point of view.</p></div>
-      <div class="footer-column"><h2>Explore</h2><a href="products.htm">Coffee</a><a href="about.htm">Our story</a><a href="contact.htm">Visit us</a></div>
-      <div class="footer-column"><h2>Find us</h2><p>Mar Mikhael, Beirut</p><p>hello@emberandoak.test</p><p>+961 01 555 014</p></div>
-      <div class="footer-column newsletter"><h2>Notes from the roastery</h2><p>New coffees and brewing ideas, occasionally.</p><form class="newsletter-form" action="#"><label class="visually-hidden" for="products-email">Email address</label><input id="products-email" type="email" placeholder="Email address"><button type="submit" aria-label="Join newsletter">→</button></form></div>
+    <div class="container footer-grid">
+      <div class="footer-brand"><a class="brand footer-logo" href="../index.htm"><strong>EMBER</strong><span>&amp;</span><strong>OAK</strong></a><p>Small-batch coffee roasted in Beirut.</p></div>
+      <div class="footer-column"><h2>Shop</h2><a href="products.htm">All coffee</a><a href="#bundles">Coffee bundles</a><a href="products.htm">New arrivals</a></div>
+      <div class="footer-column"><h2>Help</h2><a href="about.htm">Our story</a><a href="contact.htm">Contact us</a><a href="contact.htm#visit">Visit the roastery</a></div>
+      <div class="footer-column"><h2>Find us</h2><p>18 River Street<br>Mar Mikhael, Beirut</p><p>Mon&ndash;Sat, 8 AM&ndash;7 PM</p></div>
     </div>
-    <div class="container footer-bottom"><p>© 2026 Ember &amp; Oak. Student project.</p><p>Inspired by modern editorial storefronts.</p></div>
+    <div class="container footer-bottom"><p>&copy; 2026 Ember &amp; Oak. Student project.</p><p>HTML &middot; CSS &middot; Simple JavaScript</p></div>
   </footer>
 
-  <!-- The script is placed last so the HTML above loads before JavaScript runs. -->
+  <!-- This is the only page that needs JavaScript. -->
   <script src="../js/script.js"></script>
 </body>
 </html>
