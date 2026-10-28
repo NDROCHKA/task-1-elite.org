@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-  <!-- Our custom styles are kept inside the css folder. -->
-  <link rel="stylesheet" href="css/style.css">
+  <!-- ../ goes up from the pages folder, then css/ enters the CSS folder. -->
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -20,10 +20,10 @@
     <div class="container nav-shell">
       <input class="menu-toggle" type="checkbox" id="menu-toggle">
       <label class="menu-button" for="menu-toggle" aria-label="Open navigation menu"><span></span><span></span><span></span></label>
-      <a class="brand" href="index.htm">EMBER <span>&amp;</span> OAK</a>
+      <a class="brand" href="../index.htm">EMBER <span>&amp;</span> OAK</a>
       <nav class="main-nav" aria-label="Main navigation">
         <ul class="nav-list">
-          <li><a href="index.htm">Home</a></li>
+          <li><a href="../index.htm">Home</a></li>
           <li><a class="active" href="products.htm">Coffee</a></li>
           <li><a href="about.htm">Our Story</a></li>
           <li><a href="contact.htm">Contact</a></li>
@@ -59,37 +59,37 @@
         <!-- flex-wrap lets cards move onto a new line when space runs out. -->
         <div class="product-grid full-product-grid">
           <article class="product-card">
-            <div class="product-image-link"><img src="images/coffee-1.jpg" alt="Latte surrounded by roasted coffee beans"><span class="product-label">Bestseller</span></div>
+            <div class="product-image-link"><img src="../images/coffee-1.jpg" alt="Latte surrounded by roasted coffee beans"><span class="product-label">Bestseller</span></div>
             <div class="product-info"><div><p class="product-origin">Brazil · Medium roast</p><h2>Golden Hour</h2></div><p class="product-price">$16</p></div>
             <p class="taste-notes">Cocoa · Almond · Brown sugar</p>
           </article>
 
           <article class="product-card">
-            <div class="product-image-link"><img src="images/coffee-2.jpg" alt="Coffee cups among green plants"><span class="product-label">New</span></div>
+            <div class="product-image-link"><img src="../images/coffee-2.jpg" alt="Coffee cups among green plants"><span class="product-label">New</span></div>
             <div class="product-info"><div><p class="product-origin">Ethiopia · Light roast</p><h2>Cloud Forest</h2></div><p class="product-price">$19</p></div>
             <p class="taste-notes">Peach · Jasmine · Honey</p>
           </article>
 
           <article class="product-card">
-            <div class="product-image-link"><img src="images/coffee-3.jpg" alt="Several styles of coffee arranged on a round table"></div>
+            <div class="product-image-link"><img src="../images/coffee-3.jpg" alt="Several styles of coffee arranged on a round table"></div>
             <div class="product-info"><div><p class="product-origin">Guatemala · Medium roast</p><h2>Common Ground</h2></div><p class="product-price">$17</p></div>
             <p class="taste-notes">Apple · Praline · Toffee</p>
           </article>
 
           <article class="product-card">
-            <div class="product-image-link"><img src="images/coffee-4.jpg" alt="Warm coffee shop interior"></div>
+            <div class="product-image-link"><img src="../images/coffee-4.jpg" alt="Warm coffee shop interior"></div>
             <div class="product-info"><div><p class="product-origin">Indonesia · Dark roast</p><h2>Night Shift</h2></div><p class="product-price">$18</p></div>
             <p class="taste-notes">Dark chocolate · Cedar · Spice</p>
           </article>
 
           <article class="product-card">
-            <div class="product-image-link"><img src="images/coffee-5.jpg" alt="Latte on a wooden table"></div>
+            <div class="product-image-link"><img src="../images/coffee-5.jpg" alt="Latte on a wooden table"></div>
             <div class="product-info"><div><p class="product-origin">Colombia · Medium roast</p><h2>After Rain</h2></div><p class="product-price">$18</p></div>
             <p class="taste-notes">Cherry · Caramel · Orange</p>
           </article>
 
           <article class="product-card">
-            <div class="product-image-link"><img src="images/coffee-6.jpg" alt="Roasted coffee beans on a dark surface"><span class="product-label">House blend</span></div>
+            <div class="product-image-link"><img src="../images/coffee-6.jpg" alt="Roasted coffee beans on a dark surface"><span class="product-label">House blend</span></div>
             <div class="product-info"><div><p class="product-origin">Seasonal blend · Medium-dark</p><h2>Ember House</h2></div><p class="product-price">$15</p></div>
             <p class="taste-notes">Hazelnut · Molasses · Cacao</p>
           </article>
@@ -111,7 +111,7 @@
 
   <footer class="site-footer">
     <div class="container footer-top">
-      <div class="footer-brand"><a class="brand" href="index.htm">EMBER <span>&amp;</span> OAK</a><p>Small batches, warm tables, and coffee with a clear point of view.</p></div>
+      <div class="footer-brand"><a class="brand" href="../index.htm">EMBER <span>&amp;</span> OAK</a><p>Small batches, warm tables, and coffee with a clear point of view.</p></div>
       <div class="footer-column"><h2>Explore</h2><a href="products.htm">Coffee</a><a href="about.htm">Our story</a><a href="contact.htm">Visit us</a></div>
       <div class="footer-column"><h2>Find us</h2><p>Mar Mikhael, Beirut</p><p>hello@emberandoak.test</p><p>+961 01 555 014</p></div>
       <div class="footer-column newsletter"><h2>Notes from the roastery</h2><p>New coffees and brewing ideas, occasionally.</p><form class="newsletter-form" action="#"><label class="visually-hidden" for="products-email">Email address</label><input id="products-email" type="email" placeholder="Email address"><button type="submit" aria-label="Join newsletter">→</button></form></div>
