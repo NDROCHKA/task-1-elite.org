@@ -651,7 +651,8 @@ h3 {
 .coffee-page-hero {
   background:
     linear-gradient(90deg, rgba(20, 11, 6, 0.95), rgba(20, 11, 6, 0.48)),
-    url("images/coffee-6.jpg") center / cover no-repeat;
+    /* ../ moves from the css folder back to the project root. */
+    url("../images/coffee-6.jpg") center / cover no-repeat;
 }
 
 .page-hero-content {
