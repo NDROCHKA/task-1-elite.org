@@ -4,7 +4,7 @@
   <!-- Basic information used by the browser and search engines. -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ember & Oak is a fictional Beirut coffee roastery created as a front-end learning project.">
+  <meta name="description" content="Ember & Oak is a Beirut coffee roastery offering fresh small-batch coffee, curated bundles, and practical brewing guidance.">
   <title>Ember &amp; Oak | Coffee Roasters</title>
 
   <!-- One clean sans-serif family keeps the store-like design consistent. -->
@@ -38,37 +38,44 @@
       <!-- aria-current and active identify the page currently being viewed. -->
       <nav class="main-nav" aria-label="Main navigation">
         <ul class="nav-list">
-          <li><a class="active" aria-current="page" href="index.htm">Home</a></li>
-          <li><a href="pages/products.htm">Shop coffee</a></li>
-          <li><a href="pages/products.htm#bundles">Bundles</a></li>
-          <li><a href="pages/about.htm">Our story</a></li>
+          <li><a class="active" aria-current="page" href="index.html">Home</a></li>
+          <li><a href="pages/products.html">Shop coffee</a></li>
+          <li><a href="pages/products.html#bundles">Bundles</a></li>
+          <li><a href="pages/about.html">Our story</a></li>
         </ul>
       </nav>
 
       <!-- Using strong and span elements lets CSS style each logo part. -->
-      <a class="brand" href="index.htm" aria-label="Ember and Oak home">
+      <a class="brand" href="index.html" aria-label="Ember and Oak home">
         <strong>EMBER</strong><span>&amp;</span><strong>OAK</strong>
       </a>
 
       <div class="nav-actions">
-        <a class="nav-contact" href="pages/contact.htm">Contact</a>
-        <a class="header-cta" href="pages/contact.htm#visit">Visit us</a>
+        <a class="nav-contact" href="pages/contact.html">Contact</a>
+        <a class="header-cta" href="pages/contact.html#visit">Visit us</a>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- HERO: one strong static image replaces the reference site's complex slider. -->
+    <!-- HERO SLIDER: JavaScript rotates between three original coffee images. -->
     <section class="home-hero">
-      <img src="images/hero.jpg" alt="Dark roasted coffee beans">
+      <img class="hero-slide active" src="images/hero.jpg" alt="Dark roasted coffee beans">
+      <img class="hero-slide" src="images/coffee-6.jpg" alt="Fresh dark-roast coffee beans">
+      <img class="hero-slide" src="images/cafe.jpg" alt="A bright coffee shop interior">
       <div class="hero-shade"></div>
       <div class="container home-hero-content">
         <p class="eyebrow light">The weekly roast &middot; Beirut</p>
         <h1>Coffee,<br>considered.</h1>
         <p>Small batches, clear flavours, and a better start to every morning.</p>
-        <a class="button button-light" href="pages/products.htm">Shop the collection</a>
+        <a class="button button-light" href="pages/products.html">Shop the collection</a>
       </div>
       <p class="hero-corner-note">Season 04 / 2026</p>
+      <div class="hero-controls" aria-label="Hero slideshow controls">
+        <button type="button" data-slide-prev aria-label="Previous slide">&#8592;</button>
+        <span data-slide-count>01 / 03</span>
+        <button type="button" data-slide-next aria-label="Next slide">&#8594;</button>
+      </div>
     </section>
 
     <!-- CATEGORY CARDS: a simplified version of the reference's Shop by Category area. -->
@@ -81,25 +88,25 @@
 
         <!-- Each category is a complete clickable card with image and overlay text. -->
         <div class="category-grid">
-          <a class="category-card" href="pages/products.htm">
+          <a class="category-card" href="pages/products.html">
             <img src="images/coffee-2.jpg" alt="Coffee cups surrounded by green plants">
             <div class="category-shade"></div>
             <div class="category-copy"><span>01</span><h3>Light roasts</h3><p>Bright and fruit-forward</p></div>
           </a>
 
-          <a class="category-card" href="pages/products.htm">
+          <a class="category-card" href="pages/products.html">
             <img src="images/coffee-1.jpg" alt="Latte beside roasted coffee beans">
             <div class="category-shade"></div>
             <div class="category-copy"><span>02</span><h3>Daily blends</h3><p>Balanced and familiar</p></div>
           </a>
 
-          <a class="category-card" href="pages/products.htm">
+          <a class="category-card" href="pages/products.html">
             <img src="images/coffee-6.jpg" alt="Dark roasted coffee beans">
             <div class="category-shade"></div>
             <div class="category-copy"><span>03</span><h3>Dark roasts</h3><p>Deep and full-bodied</p></div>
           </a>
 
-          <a class="category-card" href="pages/products.htm#bundles">
+          <a class="category-card" href="pages/products.html#bundles">
             <img src="images/coffee-3.jpg" alt="A group of coffee drinks on a table">
             <div class="category-shade"></div>
             <div class="category-copy"><span>04</span><h3>Bundles</h3><p>Made for sharing</p></div>
@@ -116,39 +123,66 @@
         <p class="eyebrow light">Coffee for every occasion</p>
         <h2>Made to be passed<br>around the table.</h2>
         <p>Choose two coffees together and discover how different origins can taste.</p>
-        <a class="button button-light" href="pages/products.htm#bundles">Explore bundles</a>
+        <a class="button button-light" href="pages/products.html#bundles">Explore bundles</a>
       </div>
     </section>
 
-    <!-- PRODUCT CARDS: four cards are enough for this student-sized homepage. -->
+    <!-- PRODUCT CARDS: a focused selection keeps the homepage concise. -->
     <section class="section products-section">
       <div class="container">
         <div class="section-title title-with-link">
           <div><p class="eyebrow">New arrivals</p><h2>Fresh from the roaster.</h2></div>
-          <a class="underlined-link" href="pages/products.htm">View all coffee &rarr;</a>
+          <a class="underlined-link" href="pages/products.html">View all coffee &rarr;</a>
         </div>
 
         <!-- Reusing product-card keeps every product visually consistent. -->
         <div class="product-grid home-product-grid">
           <article class="product-card">
-            <a class="product-image" href="pages/products.htm"><img src="images/coffee-1.jpg" alt="Golden Hour coffee"><span class="product-badge">Bestseller</span></a>
+            <div class="product-image"><img src="images/coffee-1.jpg" alt="Golden Hour coffee"><span class="product-badge">Bestseller</span></div>
             <div class="product-details"><div><p>Brazil &middot; Medium</p><h3>Golden Hour</h3></div><strong>$16</strong></div>
           </article>
 
           <article class="product-card">
-            <a class="product-image" href="pages/products.htm"><img src="images/coffee-2.jpg" alt="Cloud Forest coffee"><span class="product-badge">New</span></a>
+            <div class="product-image"><img src="images/coffee-2.jpg" alt="Cloud Forest coffee"><span class="product-badge">New</span></div>
             <div class="product-details"><div><p>Ethiopia &middot; Light</p><h3>Cloud Forest</h3></div><strong>$19</strong></div>
           </article>
 
           <article class="product-card">
-            <a class="product-image" href="pages/products.htm"><img src="images/coffee-5.jpg" alt="After Rain coffee"></a>
+            <div class="product-image"><img src="images/coffee-5.jpg" alt="After Rain coffee"></div>
             <div class="product-details"><div><p>Colombia &middot; Medium</p><h3>After Rain</h3></div><strong>$18</strong></div>
           </article>
 
           <article class="product-card">
-            <a class="product-image" href="pages/products.htm"><img src="images/coffee-6.jpg" alt="Night Shift coffee"></a>
+            <div class="product-image"><img src="images/coffee-6.jpg" alt="Night Shift coffee"></div>
             <div class="product-details"><div><p>Indonesia &middot; Dark</p><h3>Night Shift</h3></div><strong>$18</strong></div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      Display-only sample reviews for the front-end layout.
+      BACKEND REQUIRED: replace the rating, review text, and reviewer details
+      with verified customer reviews from the production database or review API.
+    -->
+    <section class="customer-reviews">
+      <div class="container">
+        <div class="review-heading">
+          <div>
+            <p class="eyebrow">Community notes</p>
+            <h2>Loved by coffee people.</h2>
+            <p class="review-rating"><strong>4.9</strong> / 5 &middot; Based on recent customer feedback</p>
+          </div>
+          <div class="review-controls">
+            <button type="button" data-review-prev aria-label="Previous review">&#8592;</button>
+            <button type="button" data-review-next aria-label="Next review">&#8594;</button>
+          </div>
+        </div>
+        <div class="review-track" data-review-track>
+          <blockquote><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>“The roast notes are clear, delivery is quick, and Golden Hour has become our everyday coffee.”</p><footer>Maya K. <span>Beirut</span></footer></blockquote>
+          <blockquote><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>“I liked being able to choose by roast level. Cloud Forest is bright without being too complicated.”</p><footer>Karim D. <span>Home brewer</span></footer></blockquote>
+          <blockquote><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>“The bundle made a great gift, and the team’s brewing recommendation was genuinely useful.”</p><footer>Rana S. <span>Mar Mikhael</span></footer></blockquote>
+          <blockquote><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>“Simple ordering, thoughtful packaging, and a dark roast that actually tastes balanced.”</p><footer>Jad A. <span>Night Shift drinker</span></footer></blockquote>
         </div>
       </div>
     </section>
@@ -170,8 +204,8 @@
       <div class="visit-copy">
         <p class="eyebrow">Our Beirut roastery</p>
         <h2>Come for the coffee.<br>Stay for the room.</h2>
-        <p>Visit our fictional neighbourhood space for espresso, fresh bags, and straightforward brewing advice.</p>
-        <a class="button button-dark" href="pages/contact.htm#visit">Plan your visit</a>
+        <p>Visit our neighbourhood space for espresso, fresh bags, and straightforward brewing advice.</p>
+        <a class="button button-dark" href="pages/contact.html#visit">Plan your visit</a>
       </div>
     </section>
   </main>
@@ -180,14 +214,15 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a class="brand footer-logo" href="index.htm"><strong>EMBER</strong><span>&amp;</span><strong>OAK</strong></a>
+        <a class="brand footer-logo" href="index.html"><strong>EMBER</strong><span>&amp;</span><strong>OAK</strong></a>
         <p>Small-batch coffee roasted in Beirut.</p>
       </div>
-      <div class="footer-column"><h2>Shop</h2><a href="pages/products.htm">All coffee</a><a href="pages/products.htm#bundles">Coffee bundles</a><a href="pages/products.htm">New arrivals</a></div>
-      <div class="footer-column"><h2>Help</h2><a href="pages/about.htm">Our story</a><a href="pages/contact.htm">Contact us</a><a href="pages/contact.htm#visit">Visit the roastery</a></div>
+      <div class="footer-column"><h2>Shop</h2><a href="pages/products.html">All coffee</a><a href="pages/products.html#bundles">Coffee bundles</a><a href="pages/products.html">New arrivals</a></div>
+      <div class="footer-column"><h2>Help</h2><a href="pages/about.html">Our story</a><a href="pages/contact.html">Contact us</a><a href="pages/contact.html#visit">Visit the roastery</a></div>
       <div class="footer-column"><h2>Find us</h2><p>18 River Street<br>Mar Mikhael, Beirut</p><p>Mon&ndash;Sat, 8 AM&ndash;7 PM</p></div>
     </div>
-    <div class="container footer-bottom"><p>&copy; 2026 Ember &amp; Oak. Student project.</p><p>HTML &middot; CSS &middot; Simple JavaScript</p></div>
+    <div class="container footer-bottom"><p>&copy; 2026 Ember &amp; Oak. All rights reserved.</p><p>Freshly roasted in Beirut</p></div>
   </footer>
+  <script src="js/script.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
   <!-- Standard metadata keeps text readable and the page responsive. -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact or visit the fictional Ember & Oak coffee roastery in Beirut.">
+  <meta name="description" content="Contact or visit the Ember & Oak coffee roastery in Beirut for coffee recommendations, pickup, and wholesale enquiries.">
   <title>Contact | Ember &amp; Oak</title>
   <!-- All pages load the same typeface for a consistent visual identity. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,17 +29,17 @@
       <!-- Main navigation connects all four pages. -->
       <nav class="main-nav" aria-label="Main navigation">
         <ul class="nav-list">
-          <li><a href="../index.htm">Home</a></li>
-          <li><a href="products.htm">Shop coffee</a></li>
-          <li><a href="products.htm#bundles">Bundles</a></li>
-          <li><a href="about.htm">Our story</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="products.html">Shop coffee</a></li>
+          <li><a href="products.html#bundles">Bundles</a></li>
+          <li><a href="about.html">Our story</a></li>
         </ul>
       </nav>
       <!-- The logo is also a homepage link. -->
-      <a class="brand" href="../index.htm" aria-label="Ember and Oak home"><strong>EMBER</strong><span>&amp;</span><strong>OAK</strong></a>
+      <a class="brand" href="../index.html" aria-label="Ember and Oak home"><strong>EMBER</strong><span>&amp;</span><strong>OAK</strong></a>
 
       <!-- #visit jumps to the opening-hours section lower on this page. -->
-      <div class="nav-actions"><a class="nav-contact active" aria-current="page" href="contact.htm">Contact</a><a class="header-cta" href="#visit">Visit us</a></div>
+      <div class="nav-actions"><a class="nav-contact active" aria-current="page" href="contact.html">Contact</a><a class="header-cta" href="#visit">Visit us</a></div>
     </div>
   </header>
 
@@ -63,7 +63,11 @@
         <p class="eyebrow">Send a message</p>
         <h2>How can we help?</h2>
 
-        <!-- Required fields use built-in browser validation; no JavaScript is needed. -->
+        <!--
+          Required fields use built-in browser validation.
+          BACKEND REQUIRED: connect this form to a secure form endpoint, add
+          server-side validation, spam protection, and email/database delivery.
+        -->
         <form class="contact-form" action="#">
           <!-- Flexbox places first and last name on the same row. -->
           <div class="form-row">
@@ -82,7 +86,6 @@
           </div>
           <div class="form-field"><label for="message">Message</label><textarea id="message" name="message" rows="5" required></textarea></div>
           <button class="button button-dark" type="submit">Submit</button>
-          <p class="form-note">Demo form only &mdash; this project has no backend, so no information is sent.</p>
         </form>
       </div>
     </section>
@@ -92,7 +95,7 @@
       <div class="container visit-info-grid">
         <div><p class="eyebrow light">Visit the roastery</p><h2>18 River Street<br>Mar Mikhael, Beirut</h2></div>
         <div><h3>Opening hours</h3><p>Monday&ndash;Saturday<br>8:00 AM&ndash;7:00 PM</p><p>Sunday<br>9:00 AM&ndash;3:00 PM</p></div>
-        <div><h3>Contact</h3><p>hello@emberandoak.test<br>+961 01 555 014</p><p>Pickup is available during all opening hours.</p></div>
+        <div><h3>Contact</h3><p>hello@emberandoak.com<br>+961 01 555 014</p><p>Pickup is available during all opening hours.</p></div>
       </div>
     </section>
   </main>
@@ -100,12 +103,13 @@
   <!-- SHARED FOOTER: this matches the footer on the other three pages. -->
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div class="footer-brand"><a class="brand footer-logo" href="../index.htm"><strong>EMBER</strong><span>&amp;</span><strong>OAK</strong></a><p>Small-batch coffee roasted in Beirut.</p></div>
-      <div class="footer-column"><h2>Shop</h2><a href="products.htm">All coffee</a><a href="products.htm#bundles">Coffee bundles</a><a href="products.htm">New arrivals</a></div>
-      <div class="footer-column"><h2>Help</h2><a href="about.htm">Our story</a><a href="contact.htm">Contact us</a><a href="#visit">Visit the roastery</a></div>
+      <div class="footer-brand"><a class="brand footer-logo" href="../index.html"><strong>EMBER</strong><span>&amp;</span><strong>OAK</strong></a><p>Small-batch coffee roasted in Beirut.</p></div>
+      <div class="footer-column"><h2>Shop</h2><a href="products.html">All coffee</a><a href="products.html#bundles">Coffee bundles</a><a href="products.html">New arrivals</a></div>
+      <div class="footer-column"><h2>Help</h2><a href="about.html">Our story</a><a href="contact.html">Contact us</a><a href="#visit">Visit the roastery</a></div>
       <div class="footer-column"><h2>Find us</h2><p>18 River Street<br>Mar Mikhael, Beirut</p><p>Mon&ndash;Sat, 8 AM&ndash;7 PM</p></div>
     </div>
-    <div class="container footer-bottom"><p>&copy; 2026 Ember &amp; Oak. Student project.</p><p>HTML &middot; CSS &middot; Simple JavaScript</p></div>
+    <div class="container footer-bottom"><p>&copy; 2026 Ember &amp; Oak. All rights reserved.</p><p>Freshly roasted in Beirut</p></div>
   </footer>
+  <script src="../js/script.js"></script>
 </body>
 </html>
